@@ -1,8 +1,8 @@
-package main.java.service.operations;
+package service.operations;
 
 public class Addition implements Operation {
-
-    public double execute(double x, double y) {
-        return x + y;
+    @Override
+    public double execute(double num1, double num2) {
+        return num1 + num2;
     }
 }

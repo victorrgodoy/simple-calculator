@@ -1,6 +1,6 @@
-package main.java.service.operations;
+package service.operations;
 
 public interface Operation {
-    double execute(double x, double y);
 
+    double execute(double num1, double num2);
 }

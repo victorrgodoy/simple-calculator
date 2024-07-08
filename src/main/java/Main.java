@@ -1,6 +1,6 @@
-package main.java;
 
-import main.java.controller.UserInterface;
+
+import controller.UserInterface;
 
 import java.util.Scanner;
 
@@ -10,4 +10,6 @@ public class Main {
         UserInterface userInterface = new UserInterface(scanner);
         userInterface.start();
     }
+
+
 }

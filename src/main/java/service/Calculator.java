@@ -1,32 +1,19 @@
-package main.java.service;
+package service;
 
-
-import main.java.service.operations.Addition;
-import main.java.service.operations.Division;
-import main.java.service.operations.Multiplication;
-import main.java.service.operations.Subtraction;
+import service.operations.*;
 
 public class Calculator {
 
-    public double calculate(String operationType, double num1, double num2){
-        double result = 0;
-        switch (operationType){
-            case "+":
-                result = new Addition().execute(num1,num2);
-                break;
-            case "-":
-                result = new Subtraction().execute(num1,num2);
-                break;
-            case "*":
-                result = new Multiplication().execute(num1, num2);
-                break;
-            case "/":
-                result = new Division().execute(num1,num2);
-                break;
-            default:
-                System.out.println("Operação inválida");
-        }
-        return result;
+    public static double calculate(TypeOperation typeOperation, double num1, double num2) {
+        return switch (typeOperation) {
+            case ADDITION -> new Addition().execute(num1, num2);
+            case SUBTRACTION -> new Subtraction().execute(num1, num2);
+            case MULTIPLICATION -> new Multiplication().execute(num1,num2);
+            case DIVISION -> new Division().execute(num1, num2);
+            case EXPONENTIATION -> new Exponentiation().execute(num1, num2);
+            case LOGARITHM -> new Logarithm().execute(num1, num2);
+            case SQUARE_ROOT -> new SquareRoot().execute(num1,Double.NaN);
+        };
     }
-
 }
+
